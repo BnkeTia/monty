@@ -41,6 +41,6 @@ void progErr(int Enum, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free_mem();
 	exit(EXIT_FAILURE);
 }

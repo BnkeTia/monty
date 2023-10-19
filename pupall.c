@@ -7,7 +7,7 @@
  */
 void pushi(stack_t **new_node, __attribute__((unused))unsigned int num)
 {
-	stack_t *temp;
+	stack_t *temp, *head;
 
 	if (stack == NULL || *new_node == NULL)
 		exit(EXIT_FAILURE);
