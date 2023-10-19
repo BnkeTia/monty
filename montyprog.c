@@ -58,7 +58,7 @@ void caller(exec_func exec, char *opcode, char *opcodeArg, int num, int format)
 {
 	stack_t *new_node;
 	int found_match, x;
-	stack_t *head;
+	stack_t *head = NULL;
 
 	found_match = 1;
 	if (strcmp(opcode, "push") == 0)

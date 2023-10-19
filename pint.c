@@ -47,7 +47,8 @@ void Errmes(int Enum, ...)
  */
 void free_mem(void)
 {
-	stack_t *temp, *head;
+	stack_t *temp;
+	stack_t	*head = NULL;
 
 	if (head == NULL)
 		return;

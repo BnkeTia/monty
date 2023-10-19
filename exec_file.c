@@ -17,12 +17,11 @@ void fxn_locater(char *opcode, char *opcodeArg, int num, int format)
 		{"pall", pall},
 		{"pint", pinto},
 		{"pop", popn},
-		{"swap", swapn},
 		{NULL, NULL}
 	};
 	if (opcode[0] == '#')
 		return;
-	for (found_match = 1, x = 0; locater[x].opcode != NULL; x++)
+	for (found_match = 1, x = 0; locater_list[x].opcode != NULL; x++)
 	{
 		if (strcmp(opcode, locater_list[x].opcode) == 0)
 		{
@@ -46,7 +45,7 @@ void openf(char *file_name)
 	if (file_name == NULL || file_ptr == NULL)
 		progErr(2, file_name);
 
-	read_file(file_ptr);
+	reader(file_ptr);
 	fclose(file_ptr);
 }
 
@@ -62,7 +61,7 @@ void reader(FILE *file_ptr)
 	char *buffer = NULL;
 	size_t length = 0;
 
-	for (line_number = 1; getline(&buffer, &length, fd) != -1; line_number++)
+	for (line_number = 1; getline(&buffer, &length, file_ptr) != -1; line_number++)
 	{
 		format = tok_input(buffer, line_number, format);
 	}
