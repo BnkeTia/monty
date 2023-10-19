@@ -32,7 +32,6 @@ void fxn_locater(char *opcode, char *opcodeArg, int num, int format)
 	if (found_match == 1)
 		progErr(3, num, opcode);
 }
-
 /**
  * openf - A function that opens a file.
  * @file_name: namepath of the file.
@@ -59,9 +58,9 @@ void reader(FILE *file_ptr)
 	int line_number = 0;
 	int format = 0;
 	char *buffer = NULL;
-	size_t length = 0;
+	size_t lengt = 0;
 
-	for (line_number = 1; getline(&buffer, &length, file_ptr) != -1; line_number++)
+	for (line_number = 1; getline(&buffer, &lengt, file_ptr) != -1; line_number++)
 	{
 		format = tok_input(buffer, line_number, format);
 	}
