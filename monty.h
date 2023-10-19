@@ -42,7 +42,10 @@ void pinto(stack_t **stack, unsigned int line_number);
 void progErr(int Enum, ...);
 void Errmes(int Enum, ...);
 void free_mem(void);
-
+stack_t *creator(int n);
+void openf(char *file_name);
+void reader(FILE *file_ptr);
+int tok_input(char *buffer, int line_number, int format);
 
 
 

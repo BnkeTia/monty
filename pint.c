@@ -3,7 +3,7 @@
 /**
  * pinto - A function that prints a stack
  * @stack: A pointer to a pointer to the top
- * @num: line number
+ * @line_number: line number
  */
 void pinto(stack_t **stack, unsigned int line_number)
 {
@@ -40,4 +40,21 @@ void Errmes(int Enum, ...)
 	}
 	free_mem();
 	exit(EXIT_FAILURE);
+}
+/**
+ * free_mem - A function that frees the malloc memory
+ * Return: void
+ */
+void free_mem(void)
+{
+	stack_t *temp, *head;
+
+	if (head == NULL)
+		return;
+	while (head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
 }
