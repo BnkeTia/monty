@@ -24,12 +24,12 @@ void pushi(stack_t **new_node, __attribute__((unused))unsigned int num)
 /**
  * pall - A function that prints all the elements of a stack.
  * @stack: A pointer to a pointer to the top of the stack
- * @num: line number
+ * @line_number: line number
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
-	(void) num;
+	(void) line_number;
 
 	if (stack == NULL)
 		exit(EXIT_FAILURE);
@@ -43,17 +43,17 @@ void pall(stack_t **stack, unsigned int line_number)
 /**
  * popn - A function that removes an element from a stack.
  * @stack: pointer to a pointer to the top of the stack
- * @num: line number
+ * @line_number: line number
  */
 void popn(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
 	if (stack == NULL || *stack == NULL)
-		Errmes(7, num);
+		Errmes(7, line_number);
 	temp = *stack;
 	*stack = temp->next;
 	if (*stack != NULL)
 		(*stack)->prev = NULL;
-	free(tmp);
+	free(temp);
 }

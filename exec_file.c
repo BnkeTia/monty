@@ -1,6 +1,40 @@
 #include "monty.h"
 
 /**
+ * fxn_locater - A function that locate required function.
+ * @opcode: opcode
+ * @opcodeArg: opcode argument
+ * @num: line number
+ * @format: format of arguments
+ * Return: void.
+ */
+void fxn_locater(char *opcode, char *opcodeArg, int num, int format)
+{
+	int found_match, x;
+
+	instruction_t locater_list[] = {
+		{"push", pushi},
+		{"pall", pall},
+		{"pint", pinto},
+		{"pop", popn},
+		{"swap", swapn},
+		{NULL, NULL}
+	};
+	if (opcode[0] == '#')
+		return;
+	for (found_match = 1, x = 0; locater[x].opcode != NULL; x++)
+	{
+		if (strcmp(opcode, locater_list[x].opcode) == 0)
+		{
+			caller(locater_list[x].f, opcode, opcodeArg, num, format);
+			found_match = 0;
+		}
+	}
+	if (found_match == 1)
+		progErr(3, num, opcode);
+}
+
+/**
  * openf - A function that opens a file.
  * @file_name: namepath of the file.
  * Return: void
@@ -43,7 +77,7 @@ void reader(FILE *file_ptr)
  */
 int tok_input(char *buffer, int line_number, int format)
 {
-	char *opcode, param;
+	char *opcode, opcodeArg;
 	const char *toker = "\n";
 
 	if (buffer == NULL)
@@ -51,12 +85,12 @@ int tok_input(char *buffer, int line_number, int format)
 	opcode = strtok(buffer, toker);
 	if (opcode == NULL)
 		return (format);
-	param = strtok(NULL, toker);
+	opcodeArg = strtok(NULL, toker);
 
 	if (strcmp(opcode, "stack") == 0)
 		return (0);
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
-	fxn_locater(opcode, param, line_number, format);
+	fxn_locater(opcode, opcodeArg, line_number, format);
 	return (format);
 }

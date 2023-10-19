@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 
 /**
@@ -46,6 +47,10 @@ stack_t *creator(int n);
 void openf(char *file_name);
 void reader(FILE *file_ptr);
 int tok_input(char *buffer, int line_number, int format);
+void fxn_locater(char *opcode, char *opcodeArg, int num, int format);
+void popn(stack_t **stack, unsigned int line_number);
+void enqueue(stack_t **new_node, __attribute__((unused))unsigned int num);
+void caller(exec_func exec, char *opcode, char *opcodeArg, int num, int format);
 
 
 
