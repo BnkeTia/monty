@@ -79,7 +79,10 @@ void caller(exec_func exec, char *opcode, char *opcodeArg, int num, int format)
 		if (format == 0)
 			exec(&new_node, num);
 		if (format == 1)
-			enqueue(&node, num);
+			enqueue(&new_node, num);
 	}
 	else
+	{
 		exec(&head, num);
+	}
+}

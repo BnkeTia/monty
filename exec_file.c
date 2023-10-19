@@ -76,7 +76,8 @@ void reader(FILE *file_ptr)
  */
 int tok_input(char *buffer, int line_number, int format)
 {
-	char *opcode, opcodeArg;
+	char *opcode;
+	char *opcodeArg = NULL;
 	const char *toker = "\n";
 
 	if (buffer == NULL)
