@@ -34,9 +34,12 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 /*Function prototypes of stack functions */
-void pushi(stack_t **stack, unsigned int num);
+void pushi(stack_t **new_node, __attribute__((unused))unsigned int num);
 void pall(stack_t **stack, unsigned int num);
+void pinto(stack_t **stack, unsigned int num);
+
 
 
 #endif /* BISKIT_MONTY_H */
