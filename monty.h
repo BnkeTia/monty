@@ -37,8 +37,8 @@ typedef struct instruction_s
 
 /*Function prototypes of stack functions */
 void pushi(stack_t **new_node, __attribute__((unused))unsigned int num);
-void pall(stack_t **stack, unsigned int num);
-void pinto(stack_t **stack, unsigned int num);
+void pall(stack_t **stack, unsigned int line_number);
+void pinto(stack_t **stack, unsigned int line_number);
 void progErr(int Enum, ...);
 void Errmes(int Enum, ...);
 void free_mem(void);

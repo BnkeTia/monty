@@ -5,10 +5,10 @@
  * @stack: A pointer to a pointer to the top
  * @num: line number
  */
-void pinto(stack_t **stack, unsigned int num)
+void pinto(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		Errmes(6, num);
+		Errmes(6, line_number);
 	printf("%d\n", (*stack)->n);
 }
 

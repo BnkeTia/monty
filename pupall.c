@@ -26,7 +26,7 @@ void pushi(stack_t **new_node, __attribute__((unused))unsigned int num)
  * @stack: A pointer to a pointer to the top of the stack
  * @num: line number
  */
-void pall(stack_t **stack, unsigned int num)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 	(void) num;
@@ -45,7 +45,7 @@ void pall(stack_t **stack, unsigned int num)
  * @stack: pointer to a pointer to the top of the stack
  * @num: line number
  */
-void popn(stack_t **stack, unsigned int num)
+void popn(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
