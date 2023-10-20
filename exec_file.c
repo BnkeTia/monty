@@ -17,6 +17,10 @@ void fxn_locater(char *opcode, char *opcodeArg, int num, int format)
 		{"pall", pall},
 		{"pint", pinto},
 		{"pop", popn},
+		{"swap", swapn},
+		{"add", addxn},
+		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 	if (opcode[0] == '#')
