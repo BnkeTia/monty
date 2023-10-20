@@ -28,7 +28,7 @@ void progErr(int Enum, ...)
 		case 3:
 			numA = va_arg(bagu, int);
 			com = va_arg(bagu, char *);
-			fprintf(stderr, "L%d: unknown insruction %s\n", numA, com);
+			fprintf(stderr, "L%d: unknown instruction %s\n", numA, com);
 			break;
 		case 4:
 			fprintf(stderr, "Error: malloc failed\n");
