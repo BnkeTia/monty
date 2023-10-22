@@ -42,7 +42,7 @@ void reader(FILE *fd)
  * parser - A function that separates each line into tokens.
  * @buffer: line from the file
  * @line_number: line number
- * @format:  storage format.
+ * @format:  format.
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
@@ -69,10 +69,10 @@ int parser(char *buffer, int line_number, int format)
 }
 
 /**
- * loc - A fun ction that locates the appropriate function for the opcode
+ * loc - A function that locates the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
- * @format:  storage format. If 0 Nodes will be entered as a stack.
+ * @format: format
  * @ln: line number
  * if 1 nodes will be entered as a queue.
  * Return: void
@@ -88,10 +88,10 @@ void loc(char *opcode, char *value, int ln, int format)
 		{"pint", pinto},
 		{"pop", pop},
 		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
+		{"swap", swapn},
+		{"add", addxn},
+		{"sub", subxn},
+		{"div", divxn},
 		{"mul", mul_nodes},
 		{"mod", mod_nodes},
 		{"pchar", print_char},
@@ -123,7 +123,7 @@ void loc(char *opcode, char *value, int ln, int format)
  * @op: string representing the opcode.
  * @val: string representing a numeric value.
  * @ln: line numeber for the instruction.
- * @format: Format specifier. If 0 Nodes will be entered as a stack.
+ * @format: Format
  * if 1 nodes will be entered as a queue.
  */
 void caller(op_func func, char *op, char *val, int ln, int format)

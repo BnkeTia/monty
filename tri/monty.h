@@ -61,12 +61,12 @@ void caller(op_func, char *, char *, int, int);
 void pinto(stack_t **, unsigned int);
 void pop(stack_t **, unsigned int);
 void nop(stack_t **, unsigned int);
-void swap_nodes(stack_t **, unsigned int);
+void swapn(stack_t **, unsigned int);
 
 /*Math operations with nodes*/
-void add_nodes(stack_t **, unsigned int);
-void sub_nodes(stack_t **, unsigned int);
-void div_nodes(stack_t **, unsigned int);
+void addxn(stack_t **, unsigned int);
+void subxn(stack_t **, unsigned int);
+void divxn(stack_t **, unsigned int);
 void mul_nodes(stack_t **, unsigned int);
 void mod_nodes(stack_t **, unsigned int);
 
