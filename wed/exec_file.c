@@ -94,6 +94,8 @@ int tok_input(char *buffer, int line_number, int format)
 		return (0);
 	if (strcmp(opcode, "queue") == 0)
 		return (1);
+
 	fxn_locater(opcode, opcodeArg, line_number, format);
+
 	return (format);
 }

@@ -1,9 +1,14 @@
 #ifndef BISKIT_MONTY_H
 #define BISKIT_MONTY_H
 
+#define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdarg.h>
+#include <string.h>
+#include <unistd.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -34,9 +39,30 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+typedef void (*exec_func)(stack_t **stack, unsigned int line_number);
+
+
 /*Function prototypes of stack functions */
-void pushi(stack_t **stack, unsigned int num);
-void pall(stack_t **stack, unsigned int num);
+void pushi(stack_t **new_node, __attribute__((unused))unsigned int num);
+void pall(stack_t **stack, unsigned int line_number);
+void pinto(stack_t **stack, unsigned int line_number);
+void progErr(int Enum, ...);
+void Errmes(int Enum, ...);
+void free_mem(void);
+stack_t *creator(int n);
+void openf(char *file_name);
+void reader(FILE *file_ptr);
+int tok_input(char *buffer, int line_number, int format);
+void fxn_locater(char *opcode, char *opcodeArg, int num, int format);
+void popn(stack_t **stack, unsigned int line_number);
+void enqueue(stack_t **new_node, __attribute__((unused))unsigned int num);
+void caller(exec_func exec, char *opcode, char *opcodeArg, int num, int format);
+void swapn(stack_t **stack, unsigned int line_number);
+void addxn(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+
 
 
 #endif /* BISKIT_MONTY_H */
