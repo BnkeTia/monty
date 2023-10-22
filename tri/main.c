@@ -1,4 +1,5 @@
 #include "monty.h"
+
 stack_t *head = NULL;
 
 /**
@@ -21,11 +22,11 @@ int main(int argc, char *argv[])
 }
 
 /**
- * create_node - Creates a node.
+ * create_node - A function that creates a node.
  * @n: Number to go inside the node.
- * Return: Upon sucess a pointer to the node. Otherwise NULL.
+ * Return: a pointer to the node. Otherwise NULL.
  */
-stack_t *create_node(int n)
+stack_t *creator(int n)
 {
 	stack_t *node;
 
@@ -40,6 +41,7 @@ stack_t *create_node(int n)
 
 /**
  * free_mem - A function that frees nodes in the stack.
+ * Return: void.
  */
 void free_mem(void)
 {
@@ -58,11 +60,11 @@ void free_mem(void)
 
 
 /**
- * add_to_queue - Adds a node to the queue.
+ * enqueue - A function that adds a node to the queue.
  * @new_node: Pointer to the new node.
- * @ln: line number of the opcode.
+ * @ln: line number
  */
-void add_to_queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
+void enqueue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
 

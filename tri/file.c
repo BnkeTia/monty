@@ -92,10 +92,10 @@ void loc(char *opcode, char *value, int ln, int format)
 		{"add", addxn},
 		{"sub", subxn},
 		{"div", divxn},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
+		{"mul", mul},
+		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{NULL, NULL}
@@ -147,11 +147,11 @@ void caller(op_func func, char *op, char *val, int ln, int format)
 			if (isdigit(val[i]) == 0)
 				progErr(5, ln);
 		}
-		node = create_node(atoi(val) * flag);
+		node = creator(atoi(val) * flag);
 		if (format == 0)
 			func(&node, ln);
 		if (format == 1)
-			add_to_queue(&node, ln);
+			enqueue(&node, ln);
 	}
 	else
 		func(&head, ln);

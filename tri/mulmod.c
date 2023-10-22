@@ -1,11 +1,12 @@
 #include "monty.h"
 
 /**
- * mul_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * mul - A function that multiplies the top two elements of the stack.
+ * @stack: Pointer to a pointer to top node of the stack.
+ * @line_number: line number.
+ * Return: void.
  */
-void mul_nodes(stack_t **stack, unsigned int line_number)
+void mul(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 
@@ -21,11 +22,13 @@ void mul_nodes(stack_t **stack, unsigned int line_number)
 
 
 /**
- * mod_nodes - Adds the top two elements of the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * mod - A function tha computes the remainder of the division
+ * of the top two elements of the stack.
+ * @stack: Pointer to a pointer to the top node of the stack.
+ * @line_number: line number.
+ * Return: void.
  */
-void mod_nodes(stack_t **stack, unsigned int line_number)
+void mod(stack_t **stack, unsigned int line_number)
 {
 	int sum;
 
